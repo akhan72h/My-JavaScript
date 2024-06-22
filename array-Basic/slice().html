@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>slice()</title>
+</head>
+<body>
+    <h2>The slice() Method</h2>
+
+<p>Slice out a part of an array starting from array element 1 ("Orange"):</p>
+
+<!-- Note
+
+The slice() method creates a new array.
+
+The slice() method does not remove any elements from the source array. it will return newly created array -->   
+
+<p id="demo"></p>
+<p id="demo1"></p>
+<p id="demo2"></p>
+<p id="demo3"></p>
+<p id="demo4"></p>
+<p id="demo5"></p>
+<p id="demo6"></p>
+<p id="demo7"></p>
+<p id="demo8"></p>
+
+
+<!----- below examples only based on indexStart ----->
+<script>
+//syntax
+slice()
+slice(start)
+slice(start, end)
+////////////////////////////////////
+
+const fruits = ["Banana", "Orange", "Lemon", "Apple", "Mango"];
+
+document.getElementById("demo").innerHTML = "This is original=" + fruits;  
+
+const citrus1 = fruits.slice(); 
+
+document.getElementById("demo1").innerHTML =  citrus1;   //no parameters no change
+
+const citrus2 = fruits.slice(0); 
+
+document.getElementById("demo2").innerHTML =  citrus2;   //if parameter 0 still no change
+
+const citrus3 = fruits.slice(1); 
+
+document.getElementById("demo3").innerHTML =  citrus3;  //extract from orange.... 1st element Banana will not be extracted
+
+const citrus4 = fruits.slice(2); 
+
+document.getElementById("demo4").innerHTML =  citrus4;  //extract from Lemon.... 1st two elements Banana, Orange will not be extracted
+
+const citrus5 = fruits.slice(3); 
+
+document.getElementById("demo5").innerHTML =  citrus5;   //extract from Apple.... 1st three elements Banana, Orange, Lemon will not be extracted
+
+const citrus6 = fruits.slice(4); 
+
+document.getElementById("demo6").innerHTML =  citrus6;  //return only extracted last mango
+
+const citrus7 = fruits.slice(5); 
+
+document.getElementById("demo7").innerHTML =  citrus7; //if indexStart >= array.length, return empty array
+
+const citrus8 = fruits.slice(-1); 
+
+document.getElementById("demo8").innerHTML =  citrus8; //if indexStart < 0, it will extract 1 element from end
+
+</script>
+
+   <script>
+         const animals = ['ant', 'bison', 'camel', 'duck', 'elephant'];
+
+          document.write(animals.slice(2));    // Expected output: Array ["camel", "duck", "elephant"]
+
+          document.write(animals.slice(2, 4));  // Expected output: Array ["camel", "duck"]
+
+          document.write(animals.slice(1, 5));  // Expected output: Array ["bison", "camel", "duck", "elephant"]
+
+          document.write(animals.slice(-2));   // Expected output: Array ["duck", "elephant"]
+
+          document.write(animals.slice(2, -1));  // Expected output: Array ["camel", "duck"]
+
+          document.write(animals.slice());    // Expected output: Array ["ant", "bison", "camel", "duck", "elephant"]
+
+   </script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=s, initial-scale=1.0">
+    <title>repeat single time</title>
+</head>
+<body>
+    <script>
+        let ak = ["vadodara", "ahmdabad","vadodara","ahmdabad"];
+
+        let a = ak.reduce(function(pre,value)
+        {
+            if(pre.includes(value)==false)
+            {
+                pre.push(value);
+            }
+            
+                return pre;
+            
+        },[])
+        document.write(a);
+    </script>
+</body>
+</html>

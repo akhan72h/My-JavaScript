@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>counter</title>
+</head>
+<body>
+    <h1>counter</h1>
+    <input type="text" id="counter">
+    <div id="result">5</div>
+
+    <button onclick="add()">+</button>
+    <button onclick="sub()">-</button>
+
+    <script>
+        let c= 0;
+        let p=0;
+        
+
+        
+       function add()
+       {
+         p =+(document.getElementById("counter").value);
+         c =+(document.getElementById("result").innerText)
+        if(p>0)
+        {
+            
+            document.getElementById("result").innerText=c+p;
+        }
+        else
+        {
+            ++c;
+            document.getElementById("result").innerHTML=c;
+        }
+        
+       
+       }
+    
+       function sub()
+       {
+        p=+(document.getElementById("counter").value);
+        c =+(document.getElementById("result").innerText);
+        if(p>0)
+        {
+            
+            document.getElementById("result").innerText=c-p;
+        }
+        else
+        {
+            --c;
+            document.getElementById("result").innerHTML=c;
+        }
+       }
+    
+
+    </script>
+</body>
+</html>

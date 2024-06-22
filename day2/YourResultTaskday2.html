@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check Your Result</title>
+</head>
+<body>
+<h1>Check Your Score</h1>
+    <input type="number" id="number1" placeholder="Physics"><br><br>
+    <input type="number" id="number2" placeholder="Chemistry"><br><br>
+    <input type="number" id="number3" placeholder="Maths-1"><br><br>
+    <input type="number" id="number4" placeholder="English"><br><br>
+    <input type="number" id="number5" placeholder="DC circuits"><br><br>
+
+    <button onclick="ADD()">Sum</button>
+    <button onclick="average()">Percentage</button>
+    <button onclick="Check()">Check Result</button>
+
+    <div id="display1"></div>
+    <div id="display2"></div>
+    <div id="display3"></div>
+
+    <script>
+        function ADD(){
+            const num1 = +(document.getElementById("number1").value);
+            const num2 = +(document.getElementById("number2").value);
+            const num3 = +(document.getElementById("number3").value);
+            const num4 = +(document.getElementById("number4").value);
+            const num5 = +(document.getElementById("number5").value);
+
+            document.getElementById("display1").innerHTML= num1 + num2+ num3 + num4 + num5;
+
+        }
+
+        function average(){
+            const num1 = +(document.getElementById("number1").value);
+            const num2 = +(document.getElementById("number2").value);
+            const num3 = +(document.getElementById("number3").value);
+            const num4 = +(document.getElementById("number4").value);
+            const num5 = +(document.getElementById("number5").value);
+
+            const totalmarks = num1 + num2 + num3+ num4 + num5 ;
+
+            document.getElementById("display2").innerHTML=((totalmarks *100)/500);
+
+        }
+
+        function Check(){
+            const num1 = +(document.getElementById("number1").value);
+            const num2 = +(document.getElementById("number2").value);
+            const num3 = +(document.getElementById("number3").value);
+            const num4 = +(document.getElementById("number4").value);
+            const num5 = +(document.getElementById("number5").value);
+            const totalmarks = num1 + num2 + num3 + num4 + num5;
+            const averagee=(totalmarks*100/500);
+            if(averagee<=35){
+                document.getElementById("display3").innerHTML="Fail";
+            }
+            else{
+                document.getElementById("display3").innerHTML="Pass";
+            }
+
+
+        }
+
+
+
+    </script>
+    
+</body>
+</html>

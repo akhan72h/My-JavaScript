@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>splice,deleteItems & edit items</title>
+
+    <style>
+        table{
+            width: 30%;
+            
+        }
+    </style>
+</head>
+<body>
+    
+
+    
+    <input id="getItems" type="text">
+    <input id="getItems" type="number">
+
+    <button onclick="saveItems()">add Items</button>
+    <table  border="2" id="display"></table>
+   
+
+    <script>
+        let todoItems=[
+            {
+                name : "ak" ,  
+                number: "11",
+                profile: "feD"
+        },
+        {
+            name : " mk" ,  
+            number: "22",
+            profile: "fed"
+        },
+        ];
+       // let ind =-1; 
+        
+        // function saveItems()
+        // {
+            
+        //     let item = document.getElementById("items").value;
+        //     ind = index;
+        //    if(ind>=0)
+        //    {
+        //      todoItems.splice(index,1, item);
+        //    }
+        //    else{
+        //     todoItems.push(index,1);
+        //    }
+           
+        //     display();
+        // }
+      
+        function saveItems()
+        {
+            
+            let items = document.getElementById("getItems").value;
+            todoItems.push(items);
+            display();
+        }
+        function display()
+        {
+
+            let a = todoItems.map(function(value)
+            {
+
+                return `<tr><td>${value.name}</td><td>${value.number}</td><td>${value.profile}</td></tr>`
+           
+                // <button onclick="deleteItems(${index})">delete</button>
+                // <button onclick=editItems(${index})>edit</button>
+               
+            })
+            document.getElementById("display").innerHTML= a.join(" ");
+        }
+    //     function deleteItems(index)
+    //     {
+    //       todoItems.splice(index,1)
+    
+    //        display();
+    //    }
+    //    function editItems(index)
+    //    {
+    //        ind = index;
+    //        document.getElementById("items").value =todoItems[index];
+    //    }
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>shift()</title>
+</head>
+<body>
+    <h2>The shift() Method</h2>
+
+    <p>The shift() method removes the first element of an array (and "shifts" the other elements to the left or lower index):</p>
+
+    <p>The shift() method returns the value that was "shifted out":</p>
+    
+    <p id="demo1"></p>
+    <p id="demo2"></p>
+    
+    <script>
+
+        //syntax
+                shift()
+        /////////////////////////////////////////
+
+    const fruits = ["Banana", "Orange", "Apple", "Mango"];
+
+    document.getElementById("demo1").innerHTML = fruits;
+
+    fruits.shift();  //return shifted out value (Banana)
+
+    document.getElementById("demo2").innerHTML = fruits;
+
+    </script>
+
+    <script>
+               const array1 = [1, 2, 3];
+
+               const firstElement = array1.shift(); //return shifted out value (1)
+
+                 console.log(array1); // Expected output: Array [2, 3]
+
+                 console.log(firstElement); // Expected output: 1
+
+    </script>
+</body>
+</html>

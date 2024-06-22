@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>localStorage</title>
+</head>
+<body>
+
+    
+    
+    <input type="text" id="name">
+    <input type="text" id="ContactNumber">
+    <button onclick="SaveInfo()">SaveInfo</button>
+    <table id="display" border="2px"></table>
+   
+    <script>
+
+      
+        const SaveInfo = ()=>{
+               
+            let o = JSON.parse(localStorage.getItem("Employs")) || [];
+
+            let obj = {
+                
+                name : document.getElementById("name").value,
+                Contacts : document.getElementById("ContactNumber").value,
+            };
+
+         o.push(obj);
+
+         display(o);
+
+            localStorage.setItem("Employs",JSON.stringify(o));
+        }
+        
+        function display(p)
+        {
+            let  a = p.map((value)=>{
+
+                return`<tr><td>${value.name} <button onclick="dele()">Delete</button></td><td>${value.Contacts}<button onclick="dele()">Edit</button></td></tr>`
+            })
+
+            document.getElementById("display").innerHTML = a.join(" ");
+        }
+
+//function dele()
+        
+
+    </script>
+</body>
+</html>

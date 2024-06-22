@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>display api By SearchItems</title>
+</head>
+<body>
+
+    <input id="SearchItems" type="text"> <button onclick="displayItems()">SearchItems</button>
+    <table border="2px" id="display"></table>
+    <script>
+
+        let jsn;
+
+        fetch("https://fakestoreapi.com/products").then(a=>a.json()).then(a=>{
+
+
+            jsn=a;
+//console.log(a);
+
+display(a);
+//displayItems(a);
+})
+
+
+
+function display(c)
+{
+let ak = c.map((value)=>{
+
+    return `<tr><td>${value.id}</td><td>${value.title}</td><td>${value.price}</td></tr>`
+})
+document.getElementById("display").innerHTML = ak.join(" ");
+}
+ 
+
+  
+
+
+let displayItems = ()=>{
+
+  
+    let items = document.getElementById("SearchItems").value;
+
+   
+     let d = jsn.filter((k)=>{
+
+        return k.title.includes(items);
+      
+    
+    
+     })
+     
+     display(d);
+     
+    
+}
+
+
+
+    </script>
+</body>
+</html>

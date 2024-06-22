@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>loops</title>
+</head>
+<body>
+    <input type="text" id="input1">
+    <input type="text" id="input2">
+    <input type="text" id="input3">
+    <input type="text" id="input4">  <br><br>
+
+    <button onclick="result()" >Display result</button> <br><br>
+
+    <script>
+        
+        
+        let inputs = document.getElementsByTagName("input");
+        let sum = 0;
+
+        function result()
+        {
+
+        for(i=0; i<inputs.length;i++)
+        {
+           sum = sum + +(inputs[i].value); 
+        }
+        console.log(sum);
+    }
+    </script>
+</body>
+</html>

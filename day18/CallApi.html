@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>api call</title>
+</head>
+<body>
+    
+    <table border="2px" id="display"></table>
+    <script>
+        fetch("https://api.storerestapi.com/products").then(a=>a.json()).then(a=>{
+
+            console.log(a);
+
+            display(a);
+        })
+
+        function display(data)
+        {
+            let ak = data.map((value)=>{
+                return `<tr><td>${value.title}</td><td>${value.price}</td><td>${value.category.name}</td></tr>`
+            })
+            document.getElementById("display").innerHTML = ak.join(" ");
+        }
+        
+    </script>
+</body>
+</html>

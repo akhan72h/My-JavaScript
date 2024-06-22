@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>readMore & readLess</title>
+</head>
+<body>
+    <div id="display" onclick="readMore()"></div>
+
+    <script>
+        let str = "This is javaScript This is javaScript This is javaScript This is javaScript This is javaScript"
+        
+        let isReadMore = true;
+        function readMore()
+       {
+     
+        if(isReadMore)
+        {
+            document.getElementById("display").innerHTML=str.slice(0,20).concat("...readMore");
+        }
+        else
+        {
+            document.getElementById("display").innerHTML=str.concat("...readLess");
+        }
+        isReadMore = !isReadMore;
+    
+       }
+       readMore();
+    </script>
+</body>
+</html>

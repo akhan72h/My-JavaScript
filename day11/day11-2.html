@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String Search Method</title>
+</head>
+<body>
+    
+    <input type="text" id="inputs">
+    <button onclick="Search()">click me!</button>
+    <div id="display"></div>
+
+
+<script>
+     
+     let myString = ["Vadodara","Surat","Ahmadabad","Vaapi","Gaziyabad","Delhi","Godhara"];
+
+function display()
+{
+    for(let i=0; i<myString.length; i++)
+    {
+        document.getElementById("display").innerHTML += `<li> ${myString[i]}</li>`;
+    }
+}
+display();
+
+function Search()
+{
+    document.getElementById("display").innerHTML =" ";
+    
+    let searchItems = document.getElementById("inputs").value;
+
+    let regex = new RegExp(searchItems , "i")
+
+    for(let i=0; i<myString.length; i++)
+    {
+       let index = myString[i].search(regex)
+       if(index>=0)
+       {
+        document.getElementById("display").innerHTML += `<span style="color:red"> ${myString[i].substr( index,searchItems.length)}</span>${myString[i].slice(searchItems.length)}`;
+       }
+    }
+}
+</script>
+</body>
+</html>

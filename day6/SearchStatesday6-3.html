@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>includes(SearchTerm)</title>
+</head>
+<body>
+    <h2>Indian States</h2>
+    <input type="text" id="SearchTerm">
+    <button onclick="Search()">Search</button>
+
+    <ul id="List"></ul>
+
+    <script>
+
+           let States = ["Gujarat","Maharastra","UP","Uk","Dehli", "MP"]; //collections of values;
+           let i=0;
+
+        function display()
+        {
+       
+        while(i<States.length)
+        {
+          document.getElementById("List").innerHTML += "<li>" + States[i]+ "</li>";
+          i=i+1;
+        }
+        }
+
+        function Search()
+        {
+            let i = 0;
+            let SearchTerm =  document.getElementById("SearchTerm").value;
+            document.getElementById("List").innerHTML = " ";
+            
+            do
+            {
+                if(States[i].includes(SearchTerm)==true)
+                {
+                document.getElementById("List").innerHTML += "<li>" + States[i]+ "</li>";
+                }
+               i=i+1;
+            }
+            while(i<States.length)
+        }
+        display();
+    </script>
+</body>
+</html>

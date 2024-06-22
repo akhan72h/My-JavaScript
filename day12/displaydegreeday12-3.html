@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>display degree</title>
+</head>
+<body>
+    <table border="2" id="display"></table>
+
+    <script>
+
+        let degree = ["SSC","DIPLOMA","B-TECH"];
+
+        let mydegree = degree.map(function(value){
+
+            return`<tr><td>${value}</td></tr>`
+        });
+
+        document.getElementById("display").innerHTML = mydegree.join(" ");
+        
+    </script>
+</body>
+</html>

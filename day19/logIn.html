@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+    <input type="email" id="email" placeholder="email"><br>
+    <input type="password" id="password" placeholder="password"><br>
+    <input type="checkbox" id="acceptTerms" placeholder="acceptTerms"><br>
+    <button onclick="regis()">Registrations</button>
+
+    <script>
+
+        const  regis=()=>{
+            
+        
+            let obj = {
+
+            
+            "email": document.getElementById("email").value,
+            "password": document.getElementById("password").value,
+            "acceptTerms": document.getElementById("acceptTerms").checked,
+            
+        }
+        
+        fetch("https://real-pear-fly-kilt.cyclic.app/accounts/authenticate",
+        {
+           method : "POST",
+           body  : JSON.stringify(obj),
+           headers: {
+            'content-Type':"application/json"
+           }
+        }).then(a=>a.json()).then(a=>{
+        
+            console.log(a);
+        })
+        }
+            </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>push</title>
+</head>
+<body>
+    
+    
+    <input id="items" type="text">
+    <button onclick="saveItems()">add Items</button>
+    <ul id="display"></ul>
+
+    <script>
+        let todoItems=[]; 
+        
+        function saveItems()
+        {
+            
+            let item = document.getElementById("items").value;
+            todoItems.push(item);
+            display();
+        }
+        function display()
+        {
+            let a = todoItems.map(function(value)
+            {
+
+                return `<li>${value}</li>`
+               
+            })
+            document.getElementById("display").innerHTML= a.join("");
+        }
+        
+    </script>
+</body>
+</html>

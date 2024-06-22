@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discount on items</title>
+</head>
+<body>
+    
+    <input type="text" id="item1">
+    <input type="text" id="item2"><br><br>
+    <div id="display1"></div><br><br>
+    <div id="dispaly"></div><br><br>
+    <button onclick="result()">Result</button>
+
+
+    <script>
+
+        let item1,item2=0;
+        let total=0;
+
+         function result()
+         {
+            item1= +(document.getElementById("item1").value);
+            item2= +(document.getElementById("item2").value);
+            total = item1+item2;
+            document.getElementById("display1").innerHTML=total;
+            
+
+            if(total>0 && total<=20000)
+            {
+                document.getElementById("dispaly").innerText = +(total*5/100) + "you got 5% discount";
+            }
+           else if(total>20000 && total<=40000)
+            {
+                document.getElementById("dispaly").innerText = +(total*10/100) + "you got 10% discount";
+            }
+            else
+            {
+                document.getElementById("dispaly").innerText = +(total*20/100) + "you got 20% discount";
+
+            }
+         }
+        
+
+    </script>
+</body>
+</html>

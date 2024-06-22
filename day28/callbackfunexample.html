@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>callBack function</title>
+</head>
+<body>
+    
+    <script>
+        const calculate = (a, b, operation)=>{
+
+            return operation(a,b);
+
+        }
+
+        const addition = calculate(3, 4, function (num1, num2){ return num1+num2})  //method 1 to pass callback fun as an argument
+
+        console.log(addition);
+
+        const subtraction = (a,b)=> a-b;  
+
+        const subResult = calculate(9,4, subtraction) //method-2 to pass callBack fun as argument 2qa  
+        
+        console.log(subResult);
+        
+        function multiply(a,b)
+        {
+          return a*b;
+        }
+
+        const mulResult = calculate(5,5, multiply) //method-3 to pass callback as an argument
+
+        console.log(mulResult);
+    </script>
+</body>
+</html>

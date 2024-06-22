@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>callback function</title>
+</head>
+<body>
+    
+    <input id="email" type="text"> <button onclick="DisplaySearchEmail()">Search</button><br><br>
+    <table border="2px" id="displayForComment"></table><br><br>
+    <input type="text" id="emai"> <button onclick="DisplaySearchBody()">Search</button><br><br>
+    <table border="2px" id="displayForPost"></table>
+  
+    <script>
+
+       let jsn1;
+       let jsn2;
+        const callAPI = (url,display)=>{
+
+           fetch(url).then(y=>y.json()).then(y=> {
+
+            display(y);
+            //jsn = y;
+           })
+
+        }
+
+        const displayForComments = (data)=>{
+             
+            jsn1 = data;
+            let a = data.map((value)=>{
+
+                return (`<tr><td>${value.id}</td><td>${value.name}</td><td>${value.email}</td><td>${value.body}</td></tr>`)
+
+            });
+
+
+            document.getElementById("displayForComment").innerHTML= a.join(" ");
+
+        }
+        callAPI("https://jsonplaceholder.typicode.com/comments",displayForComments);
+
+
+
+        const DisplaySearchEmail = ()=>{
+            
+            let SearchTerm = document.getElementById("email").value;
+            
+            let Email = jsn1.filter((value)=>{
+           
+            return value.email.includes(SearchTerm);
+
+            })
+            displayForComments(Email);
+        }
+
+        const displayForPosts = (data)=>{
+             
+            jsn2 = data;
+
+            let a = data.map((value)=>{
+
+                return (`<tr><td>${value.id}</td><td>${value.title}</td><td>${value.body}</td></tr>`)
+
+        });
+
+
+         document.getElementById("displayForPost").innerHTML= a.join(" ");
+
+        }
+
+     callAPI("https://jsonplaceholder.typicode.com/posts",displayForPosts);
+
+    //  const DisplaySearchBody = ()=>{
+            
+    //         let SearchItem = document.getElementById("emai").value;
+    //         console.log(jsn2);
+            
+    //         let ody = jsn2.filter((value)=>{
+           
+    //         return value.body.includes(SearchItem);
+
+    //         })
+    //         displayForPosts(ody);
+    //     }
+    const DisplaySearchBody = () => {
+        
+    let searchTerm = document.getElementById("emai").value;
+    console.log(jsn2);
+
+    let filteredPosts = jsn2.filter((value) => {
+        // Convert both body and search term to lowercase for case-insensitive comparison
+        let bodyText = value.body.toLowerCase();
+        let searchTermLower = searchTerm.toLowerCase();
+        // Check if the body contains the search term exactly
+        return bodyText === searchTermLower;
+    });
+
+    displayForPosts(filteredPosts);
+}
+
+
+    </script>
+
+    
+</body>
+</html>

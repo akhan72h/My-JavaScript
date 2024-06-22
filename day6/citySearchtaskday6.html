@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search city acc num</title>
+</head>
+<body>
+
+    <input type="text" id="city">
+    <button onclick="search()">Display cities</button>
+
+    <ul id="display"><b>Cities</b>
+
+    </ul>
+
+    <script>
+
+         let array = ["vadodara","anand","vapi","ahmedabad","valsad","gandhinagar"];
+
+
+        for(i=0;i<array.length;i++)
+        {
+            document.getElementById("display").innerHTML+= "<li>" + array[i] + "</li>";
+        }
+
+        function search()
+        {
+            let num = +(document.getElementById("city")).value
+            document.getElementById("display").innerHTML =" ";
+
+            for(i=0;i<num;i++)
+            {
+                document.getElementById("display").innerHTML+= "<li>" + array[i] + "</li>";
+
+
+            }
+
+        }
+    </script>
+
+</body>
+</html>

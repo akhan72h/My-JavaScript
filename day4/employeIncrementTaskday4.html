@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> increament of employe </title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 50%;
+
+        }
+
+        td {
+            padding: 0px 43px;
+        }
+    </style>
+</head>
+
+<body>
+    employe name = <input type="text" id="ename"><br><br>
+    Company name = <input type="text" id="cname"><br><br>
+    Tech skill = <input type="number" id="tskill"><br><br>
+    Comm skill = <input type="number" id="cskill"><br><br>
+    project = <input type="number" id="pskill"><br><br>
+
+    salary = <input type="number" id="sal"><br><br>
+
+    <br>
+    <button onclick="increamentofemploye ()">Submit</button><br><br>
+
+    <table border="2px">
+        <caption>Employe increament data sheet</caption>
+        <tr>
+            <th>Employe name</th>
+            <td id="dis1"></td>
+        </tr>
+        <tr>
+            <th>company name</th>
+            <td id="dis2"></td>
+        </tr>
+        <tr>
+            <th>Tech skill</th>
+            <td id="dis3"></td>
+        </tr>
+        <tr>
+            <th>Communication skill</th>
+            <td id="dis4"></td>
+        </tr>
+        <tr>
+            <th>Project Explanation</th>
+            <td id="dis5"></td>
+        </tr>
+        <tr>
+            <th>Average Review</th>
+            <td id="dis6"></td>
+        </tr>
+        <tr>
+            <th>previous Salary</th>
+            <td id="dis7"></td>
+        </tr>
+        <tr>
+            <th>Revised salary</th>
+            <td><b id="dis8"></b></td>
+        </tr>
+
+    </table>
+    <h3 id="incr"></h3>
+    <script>
+
+
+        function increamentofemploye() {
+            let emp = document.getElementById("ename").value;
+            let com = document.getElementById("cname").value;
+            let tech = +(document.getElementById("tskill").value);
+            let comu = +(document.getElementById("cskill").value);
+            let pro = +(document.getElementById("pskill").value);
+            let revi = +((tech + comu + pro) / 3);
+            let fsal = +(document.getElementById("sal").value);
+
+            document.getElementById("dis1").innerHTML = emp;
+            document.getElementById("dis2").innerHTML = com;
+            document.getElementById("dis3").innerHTML = tech;
+            document.getElementById("dis4").innerHTML = comu;
+            document.getElementById("dis5").innerHTML = pro;
+            document.getElementById("dis6").innerHTML = revi;
+            document.getElementById("dis7").innerHTML = fsal;
+            if (revi >= 8 && revi <= 10) {
+                let rsal = +(fsal + ((fsal * 20) / 100))
+                document.getElementById("dis8").innerHTML = rsal;
+
+                document.getElementById("incr").innerHTML = "  (congratulations!..you got 20% increament)";
+
+            }
+            else if (revi >= 6 && revi < 8) {
+                let rsal = +(fsal + ((fsal * 10) / 100))
+                document.getElementById("dis8").innerHTML = rsal;
+
+                document.getElementById("incr").innerHTML = "  (congratulations!..you got 10% increament)";
+
+            }
+            else {
+                document.getElementById("dis8").innerHTML = fsal + "  ( Sorry.. you got no increament)";
+
+            }
+        }
+
+
+    </script>
+</body>
+
+</html>

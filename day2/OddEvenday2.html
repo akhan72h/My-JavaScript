@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+   
+    
+        <div id="display"></div>
+        
+        <input type="number" id="number" />
+        <button onclick="oddoreven()">checknumber</button>
+    
+        <script>
+    
+            function oddoreven()
+            {
+                const num= + (document.getElementById("number").value);
+    
+                if(num%2==0)
+                {
+                    document.getElementById("display").innerText = "Even";
+    
+                }
+                else
+                {
+                    document.getElementById("display").innerText = "odd";
+    
+                }
+            
+            }
+    
+        </script>
+    
+    
+
+
+
+    <!-- <input type="text"  id="number1"><br><br>
+    <input type="text"  id="number2">
+    <div id="display1"></div>
+    <div id="display2"></div>
+    <div id="display3"></div>
+    <div id="display4"></div> <br><br>
+
+    <button onclick="dislplayInfo()">click me!</button>
+    
+
+    <script>
+ function dislplayInfo()
+ {
+    const num1 = +(document.getElementById("number1").value);
+    const num2 = +(document.getElementById("number2").value);
+
+    document.getElementById("display1").innerText= num1+num2;
+    document.getElementById("display2").innerText= num1-num2;
+    document.getElementById("display3").innerText= num1*num2;
+    document.getElementById("display4").innerText= num1/num2;
+ }
+    </script> -->
+</body>
+</html>

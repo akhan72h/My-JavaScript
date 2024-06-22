@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>async</title>
+</head>
+<body>
+    <!-- <script>
+
+        //syncronous line by line code run
+        //asyncronuos == random
+  
+         async function test()  //async always return promise
+         {
+            return 1;
+         }
+
+         test().then(a=>{
+
+            console.log(a);
+
+         })
+    </script> -->
+
+    <script>
+        async function test()
+        {
+          let a = await fetch("https://jsonplaceholder.typicode.com/photos") //it will wait
+
+          let a1 = a.json();
+
+          console.log(a1);
+        }
+
+        test();
+        alert("aaa");  //first it will run 
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <input id="inp" type="text" />
+    <button onclick="Operation()">save</button>
+
+
+    <table>
+
+        <tr>
+
+            <td>
+                <input type="checkbox" />
+            </td>
+            <td>4
+                </td>
+
+                <td>
+                    <button>+</button>
+                    </td>
+                    <td>
+                        <button>-</button>
+                        </td>
+
+            </tr>
+
+            
+        <tr>
+
+            <td>
+                <input type="checkbox" />
+            </td>
+            <td>4
+                </td>
+
+                <td>
+                    <button onclick="add">+</button>
+                    </td>
+                    <td>
+                        <button>-</button>
+                        </td>
+
+            </tr>
+
+ </table>
+    
+ <script>
+    
+    const add =()=>{
+  
+          let a = document.getElementById("inp")
+           
+          a+=4;
+   
+    }
+    document.write(a);
+ </script>
+</body>
+</html>

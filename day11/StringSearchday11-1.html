@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String Search Method</title>
+</head>
+<body>
+    <!-- search()
+    match() -->
+    <input type="text" id="inputs">
+    <button onclick="Display()">click me!</button>
+<div id="display"></div>
+
+
+<script>
+    let myString = "This is a JavaScript";
+
+    function Display()
+    {
+        let inp = document.getElementById("inputs").value;
+
+        let regex = new RegExp(inp , "i")  //string search as case sensitively //here regexp is no regular expression object, so by new keyword we converted it as regexp! 
+
+        document.getElementById("display").innerHTML = `index of string is ${myString.search(regex)}`
+
+
+     // document.getElementById("display").innerHTML = `index of string is ${myString.search(/t/ig)}`
+    }
+</script>
+</body>
+</html>

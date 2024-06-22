@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filter()</title>
+</head>
+<body>
+
+    <!-- print only  odd number -->
+    <script>
+        let a = ["Vadodara","Ahemdabad","surat","jamnagar"];
+
+        let k = a.filter(function(value)
+        {
+           // return value.search(/A/i)>=0;
+            return value.includes("A");
+        })
+  console.log(k);
+
+    </script>
+</body>
+</html>

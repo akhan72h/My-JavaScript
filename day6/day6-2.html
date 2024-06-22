@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array</title>
+</head>
+<body>
+    <h2>Indian States</h2>
+    <ul id="List"></ul>
+
+    <script>
+        let States = ["Gujarat","Maharastra","UP","Dehli"] //collections of values;
+        
+        let i=0;
+        while(i<States.length)
+        {
+          document.getElementById("List").innerHTML += "<li>" + States[i]+ "</li>";
+            i++;
+        }
+    </script>
+</body>
+</html>

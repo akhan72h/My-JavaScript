@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+    <input type="text" id="email">
+    <input type="text" id="password">
+    <button onclick="Login()">Login</button>
+      
+    <script>
+        
+      
+
+        const Login = ()=>{
+          
+         let login = {
+
+                email : document.getElementById("email").value,
+                password : document.getElementById("password").value,
+            }
+            
+       
+
+        fetch("https://real-pear-fly-kilt.cyclic.app/accounts/authenticate",{
+
+            method : "POST",
+            body : JSON.stringify(login),
+            headers : {
+
+                'Content-Type' : 'Application/json'
+            }
+        }).then(a=>a.json()).then(a=>{
+
+            if(!a.massage) //if there is no msg of incorrect password
+            {
+                sessionStorage.setItem("token", a.jwtToken)  //token will we be store in session storage
+
+                location.href = "acc.html";  //after token store we will move on acc page after successful login
+            }
+        })
+    }
+    </script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>push()</title>
+</head>
+<body>
+    <h2>The push() Method</h2>
+
+<p>The push() method appends a new element to an array:</p>
+<p>The push() method returns the new array length:</p>
+
+<p id="demo1"></p>
+<p id="demo2"></p>
+<p id="demo3"></p>
+
+<script>
+// syntax
+push()
+push(element1)
+push(element1, element2)
+push(element1, element2, /* …, */ elementN)
+/////////////////////////////////////////////////////////////
+
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+
+document.getElementById("demo1").innerHTML = fruits;
+
+fruits.push("Kiwi"); //push at the end
+
+document.getElementById("demo2").innerHTML = fruits;
+
+document.getElementById("demo3").innerHTML = fruits.push(); //return new length of array after pushing
+
+</script>
+
+<script>
+    const animals = ['cat', 'goats', 'sheep'];
+
+    const count = animals.push('cows');   //return new length of array after pushing
+
+    console.log(count); // Expected output: 4
+
+    console.log(animals); // Expected output: Array ["cat", "goats", "sheep", "cows"]
+
+    animals.push('chickens', 'cats', 'dogs');
+
+    console.log(animals); // Expected output: Array ["cat", "goats", "sheep", "cows", "chickens", "cats", "dogs"]
+
+</script>
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>reduce() Method</title>
+    </head>
+<body>
+
+
+<h2>The reduce() Method</h2>
+<ul>
+    <li>The reduce() method runs a function on each array element to produce (reduce it to) a single value.</li>
+
+       <li>The reduce() method works from left-to-right in the array. See also reduceRight().</li>
+        
+       <li>The reduce() method does not reduce the original array.</li>
+</ul>
+
+<p>Find the sum of all numbers in an array:</p>
+
+<p id="demo"></p>
+
+<script>
+const numbers = [45, 4, 9, 16, 25];
+
+let sum = numbers.reduce(myFunction);
+
+document.getElementById("demo").innerHTML = "The sum is " + sum;
+
+function myFunction(total, value, index, array) //total = accumulator, value = currentValue, index = currentIndex, //index and array both are optional
+{
+  return total + value;
+}
+
+</script>
+
+<script>
+    let ak = ["vadodara", "ahmdabad","vadodara","ahmdabad"];
+
+    let a = ak.reduce(function(pre,value)  //pre is accumulator or we can say previous value
+    {
+        if(pre.includes(value)==false)
+        {
+            pre.push(value);
+        }
+        
+            return pre;
+        
+    },[]) //second argument is blank array
+    document.write(a);
+</script>
+
+
+
+<script>
+
+    <h1>Syntax</h1>
+
+     reduce(callbackFn)
+     reduce(callbackFn, initialValue)//initialValue optional
+
+
+</script>
+
+<h1>Parameters</h1>
+           
+   <h3>callbackFn</h3>
+
+    --> <p>A function to execute for each element in the array.</p> 
+    --> <p>Its return value becomes the value of the accumulator parameter on the next invocation of callbackFn.</p> 
+    --> <p>For the last invocation, the return value becomes the return value of reduce().</p> 
+    
+
+   <h4>The callBack function is called with the following arguments:</h4>
+       
+       <h5>accumulator</h5>
+
+            <p>The value resulting from the previous call to callbackFn.
+                 On the first call, its value is initialValue if the latter is specified; otherwise its value is array[0].</p>
+
+        <h5>currentValue</h5>    
+
+            <p>The value of the current element. 
+                On the first call, its value is array[0] if initialValue is specified; 
+                otherwise its value is array[1].</p>
+
+        <h5>currentIndex</h5>   
+
+               <p>The index position of currentValue in the array. 
+                On the first call, its value is 0 if initialValue is specified, otherwise 1.</p>
+
+        <h5> array</h5>
+                 
+                 <p>The array reduce() was called upon.</p>
+
+
+        
+   <h3>initialValue</h3>  
+       
+            <p>A value to which accumulator is initialized the first time the callback is called. 
+                If initialValue is specified, callbackFn starts executing with the first value in the array as currentValue. 
+                If initialValue is not specified, accumulator is initialized to the first value in the array,
+                 and callbackFn starts executing with the second value in the array as currentValue. In this case, 
+                 if the array is empty (so that there's no first value to return as accumulator), an error is thrown.
+                </p>
+</body>
+</html>

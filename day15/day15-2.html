@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>splice</title>
+</head>
+<body>
+    
+    
+    <input id="items" type="text">
+    <button onclick="saveItems()">add Items</button>
+    <ul id="display"></ul>
+
+    <script>
+        let todoItems=[];
+        let ind =-1; 
+        
+        function saveItems()
+        {
+            
+            let item = document.getElementById("items").value;
+            todoItems.push(item);
+            display();
+        }
+        function display()
+        {
+
+            let a = todoItems.map(function(value,index)
+            {
+
+                return `<li>${value}</li>
+                <button onclick="deleteItems(${index})">delete</button>
+                <button onclick=editItems(${index})>edit</button>`
+               
+            })
+            document.getElementById("display").innerHTML= a.join("");
+        }
+        function deleteItems(index)
+        {
+          todoItems.splice(index,1)
+    
+           display();
+       }
+       function editItems(index)
+       {
+        ind = index;
+           if(ind>=0)
+           {
+             todoItems.splice(index,1);
+           }
+           else{
+            todoItems.push(index,1);
+           }
+           display();
+       }
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result Method-2,Acc To GRADE</title>
+</head>
+<body>
+    
+    <input type="text" id="sub1"/>
+    <input type="text" id="sub2"/>
+    <input type="text" id="sub3"/><br><br>
+    <div id="display3"></div><br><br>
+    <div id="display4"></div><br><br>
+    <button onclick="result()">result</button><br><br>
+
+    <script>
+
+        let sub1, sub2, sub3=0;
+        let stotal,perc=0;
+
+        function result()
+        {
+            getvalues();
+            total();
+            per();
+            gra();
+        }
+
+        
+
+        function getvalues()
+        {
+            sub1 = +(document.getElementById("sub1").value);
+            sub2 = +(document.getElementById("sub2").value);
+            sub3 = +(document.getElementById("sub3").value);
+
+        }
+        function total()
+        {
+                stotal = sub1+sub2+sub3;
+                console.log(stotal);
+
+        }
+        function per()
+        {
+            perc = stotal/3;
+            document.getElementById("display4").innerHTML= +(perc)+"%";
+        }
+        function gra()
+        {
+           if(perc>80)
+           document.getElementById("display3").innerHTML="Grade A";
+
+        else if(perc>=60 && perc<=80)
+        {
+            document.getElementById("display3").innerHTML="Grade B";
+        }
+        else if(perc>=40 && perc<=59)
+        {
+            document.getElementById("display3").innerHTML="Grade C";
+        }
+        else{
+            document.getElementById("display3").innerHTML="Fail";
+        }
+        }
+
+
+
+    </script>
+</body>
+</html>

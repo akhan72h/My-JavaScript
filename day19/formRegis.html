@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Registrations</title>
+</head>
+<body>
+    <input type="text" id="firstName" placeholder="firstName"> <br><br>
+    <input type="text" id="lastName" placeholder="lastName"> <br><br>
+    <input type="text" id="title" placeholder="title"><br><br>
+    <input type="email" id="email" placeholder="email"><br><br>
+    <input type="password" id="password" placeholder="password"><br><br>
+    <input type="text" id="confirmPassword" placeholder="confirmPassword"><br><br>
+    <input type="checkbox" id="acceptTerms" placeholder="acceptTerms"><br><br>
+
+    <button onclick="regis()">Registrations</button>
+    
+    <script>
+
+const  regis=()=>{
+    
+
+    let obj = {
+    "firstName" : document.getElementById("firstName").value,
+    "title":  document.getElementById("title").value,
+    "lastName": document.getElementById("firstName").value,
+    "email": document.getElementById("email").value,
+    "password": document.getElementById("password").value,
+    "confirmPassword": document.getElementById("confirmPassword").value,
+    "acceptTerms": document.getElementById("acceptTerms").checked,
+}
+
+fetch("https://real-pear-fly-kilt.cyclic.app/accounts/register",
+{
+   method : "POST",
+   body  : JSON.stringify(obj),
+   headers: {
+    'content-Type':"application/json"
+   }
+}).then(a=>a.json()).then(a=>{
+
+    console.log(a);
+})
+}
+    </script>
+</body>
+</html>

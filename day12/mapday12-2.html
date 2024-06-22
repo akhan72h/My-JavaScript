@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>map function</title>
+</head>
+<body>
+   
+    <div>
+              <h1>JavaScript Array map()</h1>
+
+            <p> The map() method creates a new array by performing a function on each array element.</p>
+
+             <p>The map() method does not execute the function for array elements without values.</p> // important point
+
+             <p>The map() method does not change the original array.</p>
+   </div>
+
+    <script>
+        let a = [2.4,3.5,4.5,5.5];
+
+        let b = a.map(function(value) //map() method with a callBack function  //here  callBack function definition directly placed in map() 
+        {   
+
+            return Math.ceil(value) //it will give value upward round figure  
+
+
+        })
+        
+        document.write(b);
+        
+    </script>
+    <h2>The map() Method</h2>
+
+<p>Create a new array by performing a function on each array element:</p>
+<p>callBack function can take three arguments 1. value, 2. index, 3. array itself</p>
+
+<p id="demo"></p>
+
+<script>
+const numbers1 = [45, 4, 9, 16, 25];
+const numbers2 = numbers1.map(myFunction);  //only call of callBack function in map 
+
+document.getElementById("demo").innerHTML = numbers2;
+
+function myFunction(value)    //here definition of callBack function
+{  
+  return value * 2;
+}
+</script>
+</body>
+</html>

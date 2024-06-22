@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>indexOf(searchItems)</title>
+</head>
+<body>
+    <input type="text" id="input">
+    <button onclick="Search()">Search</button>
+    <button onclick="Clear()">Clear</button>
+    <div id="display"></div>
+    
+    <script>
+
+         let myString = ["Vadodara","Surat","Ahmadabad","Vaapi"];
+         
+       
+
+         for(let i=0; i<myString.length; i++)
+         {
+            document.getElementById("display").innerHTML += `<li> ${myString[i]}</li>`;
+         }
+         function Search()
+         {
+            document.getElementById("display").innerHTML =" ";
+            
+             let searchItems = document.getElementById("input").value;
+             for(let i=0; i<myString.length; i++)
+            {
+                    if(myString[i].indexOf(searchItems) >=0)
+                    {
+                        document.getElementById("display").innerHTML += `<li> ${myString[i]}</li>`
+                    }
+            }
+         }
+         function Clear()
+         {
+            document.getElementById("display").innerHTML = " ";
+
+            let myString = ["Vadodara","Surat","Ahmadabad","Vaapi"];
+         
+       
+
+           for(let i=0; i<myString.length; i++)
+           {
+            document.getElementById("display").innerHTML += `<li> ${myString[i]}</li>`;
+           }
+         }
+
+    </script>
+</body>
+</html>
